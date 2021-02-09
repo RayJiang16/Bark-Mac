@@ -31,7 +31,7 @@ final class ScheduleService {
     }
     
     @objc func run(_ timer: Timer) {
-        let today = getDate(with: "MM")
+        let today = getDate(with: "dd")
         if today != day {
             loadSchedule()
             day = today
