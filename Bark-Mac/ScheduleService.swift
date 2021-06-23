@@ -24,7 +24,8 @@ final class ScheduleService {
         guard let url = Bundle.main.url(forResource: "Schedule", withExtension: "json") else { return }
         do {
             let data = try Data(contentsOf: url)
-            self.list = try JSONDecoder().decode([ScheduleModel].self, from: data)
+            let list = try JSONDecoder().decode([ScheduleModel].self, from: data)
+            self.list = filterTodayTask(list)
         } catch {
             print(error)
         }
@@ -43,6 +44,11 @@ final class ScheduleService {
         }
     }
     
+    func getTask() -> [ScheduleModel] {
+        let now = getDate(with: "HH:mm")
+        return list.filter { $0.time == now }
+    }
+    
     func doTask(schedule: ScheduleModel) {
         User.scheduleList.forEach {
             let url = RequestService.makeUrl(token: $0, title: schedule.name, save: false, copy: false, url: schedule.scheme)
@@ -56,14 +62,35 @@ final class ScheduleService {
         }
     }
     
-    func getTask() -> [ScheduleModel] {
-        let now = getDate(with: "HH:mm")
-        return list.filter { $0.time == now }
+    // MARK: - Helper function
+    
+    private func filterTodayTask(_ list: [ScheduleModel]) -> [ScheduleModel] {
+        let today = getWeekday()
+        return list.filter {
+            switch $0.repeatType {
+            case .never, .everyday:
+                return true
+            case .custom:
+                if let repeatDay = $0.repeat?.rawValue {
+                    return today == repeatDay
+                }
+                return false
+            }
+        }
     }
     
-    func getDate(with format: String) -> String {
+    private func getDate(with format: String) -> String {
         let df = DateFormatter()
         df.dateFormat = format
         return df.string(from: Date())
+    }
+    
+    private func getWeekday() -> Int {
+        let day = Calendar.current.component(.weekday, from: Date())
+        if day == 0 {
+            return 7
+        } else {
+            return day - 1
+        }
     }
 }

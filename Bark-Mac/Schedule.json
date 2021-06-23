@@ -1,27 +1,9 @@
 [
     {
-        "name":"苏宁茅台",
-        "scheme":"suning://",
-        "time":"09:29"
-    },
-    {
-        "name":"网易茅台",
-        "scheme":"yanxuan://",
-        "time":"10:59"
-    },
-    {
-        "name":"京东茅台",
-        "scheme":"openapp.jdmobile://",
-        "time":"11:59"
-    },
-    {
         "name":"天猫茅台",
         "scheme":"taobao://",
-        "time":"19:59"
-    },
-    {
-        "name":"网易茅台",
-        "scheme":"yanxuan://",
-        "time":"21:59"
+        "time":"19:59",
+        "repeatType":2,
+        "repeat":3
     }
 ]
