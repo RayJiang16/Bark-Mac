@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AddScheduleViewController" customModule="Bark_Mac" customModuleProvider="target">
+            <connections>
+                <outlet property="dateField" destination="obP-94-z9J" id="LO3-I4-dsq"/>
+                <outlet property="nameField" destination="SVM-2o-X8L" id="Vwz-eu-8ys"/>
+                <outlet property="repeatButton" destination="xih-6a-aZr" id="avp-tl-cZM"/>
+                <outlet property="repeatButtonList1" destination="NZD-8v-EpV" id="cqb-Uk-0kY"/>
+                <outlet property="repeatButtonList2" destination="hgQ-dx-bq3" id="F2t-yI-1V0"/>
+                <outlet property="schemeField" destination="tp2-Fe-ABd" id="JX7-Ss-P86"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="441" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="STW-cc-YDG">
+                    <rect key="frame" x="20" y="254" width="400" height="26"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q9k-EL-B7w">
+                            <rect key="frame" x="-2" y="4" width="35" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="名称" id="1cZ-Wc-rjk">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SVM-2o-X8L">
+                            <rect key="frame" x="39" y="3" width="361" height="21"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="e3u-BH-Vkj">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="PDm-Wh-Aqb"/>
+                        <constraint firstItem="Q9k-EL-B7w" firstAttribute="leading" secondItem="STW-cc-YDG" secondAttribute="leading" id="bjr-0D-KeP"/>
+                        <constraint firstAttribute="width" constant="400" id="mPc-NG-6fz"/>
+                        <constraint firstItem="Q9k-EL-B7w" firstAttribute="top" secondItem="STW-cc-YDG" secondAttribute="top" constant="6" id="vXc-ge-Usw"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TVN-fU-EK8">
+                    <rect key="frame" x="20" y="208" width="400" height="26"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wpp-hJ-UgP">
+                            <rect key="frame" x="-2" y="4" width="35" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="日期" id="W9y-GK-HBA">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="obP-94-z9J">
+                            <rect key="frame" x="39" y="3" width="361" height="21"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="MM:dd" drawsBackground="YES" id="tlB-7P-sUH">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="wpp-hJ-UgP" firstAttribute="top" secondItem="TVN-fU-EK8" secondAttribute="top" constant="6" id="GDr-MC-39u"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="6Lp-Di-4tG">
+                    <rect key="frame" x="440" y="0.0" width="1" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="Gmi-5j-YIL"/>
+                    </constraints>
+                </customView>
+                <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgn-uw-3TN">
+                    <rect key="frame" x="20" y="162" width="400" height="26"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rbM-C3-I1e">
+                            <rect key="frame" x="-2" y="5" width="57" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Scheme" id="M6W-Fd-l6T">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tp2-Fe-ABd">
+                            <rect key="frame" x="61" y="3" width="339" height="21"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="safari://" drawsBackground="YES" id="uoH-77-h0S">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <stackView hidden="YES" distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZD-8v-EpV">
+                    <rect key="frame" x="20" y="80" width="228" height="16"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2gR-qr-ey6">
+                            <rect key="frame" x="-2" y="-1" width="53" height="18"/>
+                            <buttonCell key="cell" type="check" title="周一" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Pan-tU-J0p">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="repeatButtonTapped:" target="-2" id="p5w-SM-UDh"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-V7-zVC">
+                            <rect key="frame" x="57" y="-1" width="53" height="18"/>
+                            <buttonCell key="cell" type="check" title="周二" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Iaq-Oh-3NY">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="repeatButtonTapped:" target="-2" id="NEN-BN-SQv"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="x4m-w1-9Ms">
+                            <rect key="frame" x="116" y="-1" width="53" height="18"/>
+                            <buttonCell key="cell" type="check" title="周三" bezelStyle="regularSquare" imagePosition="left" inset="2" id="T60-ME-707">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="repeatButtonTapped:" target="-2" id="S3D-rM-kEV"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="bv6-Oo-xze">
+                            <rect key="frame" x="175" y="-1" width="53" height="18"/>
+                            <buttonCell key="cell" type="check" title="周四" bezelStyle="regularSquare" imagePosition="left" inset="2" id="PEK-BE-9GZ">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="repeatButtonTapped:" target="-2" id="6YD-wF-B44"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <stackView hidden="YES" distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgQ-dx-bq3">
+                    <rect key="frame" x="20" y="44" width="169" height="16"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="jLW-uh-SFI">
+                            <rect key="frame" x="-2" y="-1" width="53" height="18"/>
+                            <buttonCell key="cell" type="check" title="周五" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1CA-8c-wCL">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="repeatButtonTapped:" target="-2" id="WZc-mM-JOJ"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="sCN-bK-iBX">
+                            <rect key="frame" x="57" y="-1" width="53" height="18"/>
+                            <buttonCell key="cell" type="check" title="周六" bezelStyle="regularSquare" imagePosition="left" inset="2" id="B7K-wy-6fA">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="repeatButtonTapped:" target="-2" id="prB-pw-58e"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="CQH-ZR-5Pf">
+                            <rect key="frame" x="116" y="-1" width="53" height="18"/>
+                            <buttonCell key="cell" type="check" title="周日" bezelStyle="regularSquare" imagePosition="left" inset="2" id="39g-eI-c6T">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="repeatButtonTapped:" target="-2" id="hqd-VL-I0m"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utR-YJ-zLR">
+                    <rect key="frame" x="20" y="116" width="150" height="26"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bwk-vY-d4K">
+                            <rect key="frame" x="-2" y="8" width="58" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="重复频率" id="eWU-8k-K6K">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xih-6a-aZr">
+                            <rect key="frame" x="59" y="2" width="95" height="25"/>
+                            <popUpButtonCell key="cell" type="push" title="永不" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="7A9-uZ-tBl" id="zEN-j6-lQL">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" id="xlg-dh-rpH">
+                                    <items>
+                                        <menuItem title="永不" state="on" keyEquivalent="1" id="7A9-uZ-tBl"/>
+                                        <menuItem title="每天" keyEquivalent="2" id="z1I-Zj-fga"/>
+                                        <menuItem title="自定" keyEquivalent="3" id="aa5-Oo-riQ"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <connections>
+                                <action selector="repeatTypeButtonTapped:" target="-2" id="2Mx-bo-OcW"/>
+                            </connections>
+                        </popUpButton>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="9zM-P3-E1r"/>
+                        <constraint firstItem="bwk-vY-d4K" firstAttribute="top" secondItem="utR-YJ-zLR" secondAttribute="top" constant="2" id="Imw-kO-DSZ"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="hgn-uw-3TN" firstAttribute="leading" secondItem="STW-cc-YDG" secondAttribute="leading" id="1GQ-Pz-H3g"/>
+                <constraint firstItem="hgQ-dx-bq3" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="3e4-Ad-xO9"/>
+                <constraint firstItem="hgn-uw-3TN" firstAttribute="height" secondItem="STW-cc-YDG" secondAttribute="height" id="6BX-gt-KPx"/>
+                <constraint firstItem="NZD-8v-EpV" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="6qK-cD-uFj"/>
+                <constraint firstItem="hgQ-dx-bq3" firstAttribute="top" secondItem="NZD-8v-EpV" secondAttribute="bottom" constant="20" id="GPM-RL-XQI"/>
+                <constraint firstItem="TVN-fU-EK8" firstAttribute="leading" secondItem="STW-cc-YDG" secondAttribute="leading" id="GXp-Ll-Njk"/>
+                <constraint firstAttribute="bottom" secondItem="6Lp-Di-4tG" secondAttribute="bottom" id="H4w-Lt-GE5"/>
+                <constraint firstItem="hgn-uw-3TN" firstAttribute="width" secondItem="STW-cc-YDG" secondAttribute="width" id="JW3-AJ-5j9"/>
+                <constraint firstItem="6Lp-Di-4tG" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="LCI-h3-n4P"/>
+                <constraint firstItem="STW-cc-YDG" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="NbB-o8-fSx"/>
+                <constraint firstItem="TVN-fU-EK8" firstAttribute="top" secondItem="STW-cc-YDG" secondAttribute="bottom" constant="20" id="Ual-zI-LB7"/>
+                <constraint firstAttribute="trailing" secondItem="6Lp-Di-4tG" secondAttribute="trailing" id="UcR-Vl-Bt3"/>
+                <constraint firstItem="STW-cc-YDG" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="VYk-CH-4hb"/>
+                <constraint firstItem="utR-YJ-zLR" firstAttribute="leading" secondItem="STW-cc-YDG" secondAttribute="leading" id="aEc-UN-ZoK"/>
+                <constraint firstItem="utR-YJ-zLR" firstAttribute="height" secondItem="STW-cc-YDG" secondAttribute="height" id="bsS-fB-PoE"/>
+                <constraint firstItem="NZD-8v-EpV" firstAttribute="top" secondItem="utR-YJ-zLR" secondAttribute="bottom" constant="20" id="cmE-vg-Vec"/>
+                <constraint firstItem="TVN-fU-EK8" firstAttribute="width" secondItem="STW-cc-YDG" secondAttribute="width" id="csS-E9-GIC"/>
+                <constraint firstItem="6Lp-Di-4tG" firstAttribute="leading" secondItem="STW-cc-YDG" secondAttribute="trailing" constant="20" id="hm5-tv-m3W"/>
+                <constraint firstItem="TVN-fU-EK8" firstAttribute="height" secondItem="STW-cc-YDG" secondAttribute="height" id="js7-l2-2zm"/>
+                <constraint firstItem="utR-YJ-zLR" firstAttribute="top" secondItem="hgn-uw-3TN" secondAttribute="bottom" constant="20" id="tSN-Z2-q4G"/>
+                <constraint firstItem="hgn-uw-3TN" firstAttribute="top" secondItem="TVN-fU-EK8" secondAttribute="bottom" constant="20" id="xYj-YK-deb"/>
+            </constraints>
+            <point key="canvasLocation" x="-125" y="154"/>
+        </customView>
+    </objects>
+</document>

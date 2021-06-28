@@ -22,6 +22,11 @@ class PopViewController: NSViewController {
         NSApplication.shared.terminate(self)
     }
     
+    @IBAction func settingsButtonTapped(_ sender: NSButton) {
+        let controller = ScheduleListViewController(nibName: "ScheduleListViewController", bundle: nil)
+        presentAsModalWindow(controller)
+    }
+    
     @IBAction func sendButtonTapped(_ sender: NSButton) {
         let text = textField.stringValue
         if text.isEmpty {

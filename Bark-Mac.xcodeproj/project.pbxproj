@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		713148D12684B53500F303E6 /* ScheduleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713148CF2684B53500F303E6 /* ScheduleListViewController.swift */; };
+		713148D22684B53500F303E6 /* ScheduleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 713148D02684B53500F303E6 /* ScheduleListViewController.xib */; };
+		713148D52684B54200F303E6 /* AddScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713148D32684B54200F303E6 /* AddScheduleViewController.swift */; };
+		713148D62684B54200F303E6 /* AddScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 713148D42684B54200F303E6 /* AddScheduleViewController.xib */; };
 		71360A3325CBD2F100E8E668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71360A3225CBD2F100E8E668 /* AppDelegate.swift */; };
 		71360A3725CBD2F400E8E668 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71360A3625CBD2F400E8E668 /* Assets.xcassets */; };
 		71360A3A25CBD2F400E8E668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71360A3825CBD2F400E8E668 /* Main.storyboard */; };
@@ -18,9 +22,16 @@
 		719349EE25CBD31F00747459 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719349E725CBD31F00747459 /* PopViewController.swift */; };
 		719349EF25CBD31F00747459 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719349E825CBD31F00747459 /* ScheduleService.swift */; };
 		719349F425CBD36300747459 /* Schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 719349F325CBD36300747459 /* Schedule.json */; };
+		C60C3C977E947CD7D7C2A01C /* Pods_Bark_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081040E24A788D6246A4CD2C /* Pods_Bark_Mac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		081040E24A788D6246A4CD2C /* Pods_Bark_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bark_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E6ED096FCAD3F0D14029854 /* Pods-Bark-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bark-Mac.debug.xcconfig"; path = "Target Support Files/Pods-Bark-Mac/Pods-Bark-Mac.debug.xcconfig"; sourceTree = "<group>"; };
+		713148CF2684B53500F303E6 /* ScheduleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListViewController.swift; sourceTree = "<group>"; };
+		713148D02684B53500F303E6 /* ScheduleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleListViewController.xib; sourceTree = "<group>"; };
+		713148D32684B54200F303E6 /* AddScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleViewController.swift; sourceTree = "<group>"; };
+		713148D42684B54200F303E6 /* AddScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddScheduleViewController.xib; sourceTree = "<group>"; };
 		71360A2F25CBD2F100E8E668 /* Bark-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bark-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71360A3225CBD2F100E8E668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71360A3625CBD2F400E8E668 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,6 +46,7 @@
 		719349E725CBD31F00747459 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		719349E825CBD31F00747459 /* ScheduleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
 		719349F325CBD36300747459 /* Schedule.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Schedule.json; sourceTree = "<group>"; };
+		F9F6D09BBC7C4BB70ACB8B25 /* Pods-Bark-Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bark-Mac.release.xcconfig"; path = "Target Support Files/Pods-Bark-Mac/Pods-Bark-Mac.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,17 +54,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C60C3C977E947CD7D7C2A01C /* Pods_Bark_Mac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DDAFD81768308EF2E2C28BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E6ED096FCAD3F0D14029854 /* Pods-Bark-Mac.debug.xcconfig */,
+				F9F6D09BBC7C4BB70ACB8B25 /* Pods-Bark-Mac.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		59A51061AFE33DD57F234A66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				081040E24A788D6246A4CD2C /* Pods_Bark_Mac.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		71360A2625CBD2F100E8E668 = {
 			isa = PBXGroup;
 			children = (
 				71360A3125CBD2F100E8E668 /* Bark-Mac */,
 				71360A3025CBD2F100E8E668 /* Products */,
+				3DDAFD81768308EF2E2C28BE /* Pods */,
+				59A51061AFE33DD57F234A66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +103,10 @@
 				71360A3225CBD2F100E8E668 /* AppDelegate.swift */,
 				719349E725CBD31F00747459 /* PopViewController.swift */,
 				719349E625CBD31F00747459 /* PopViewController.xib */,
+				713148CF2684B53500F303E6 /* ScheduleListViewController.swift */,
+				713148D02684B53500F303E6 /* ScheduleListViewController.xib */,
+				713148D32684B54200F303E6 /* AddScheduleViewController.swift */,
+				713148D42684B54200F303E6 /* AddScheduleViewController.xib */,
 				719349E225CBD31F00747459 /* ScheduleModel.swift */,
 				719349E825CBD31F00747459 /* ScheduleService.swift */,
 				719349E525CBD31F00747459 /* RequestService.swift */,
@@ -91,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71360A3F25CBD2F400E8E668 /* Build configuration list for PBXNativeTarget "Bark-Mac" */;
 			buildPhases = (
+				EDFDA82324BE130D22BB363E /* [CP] Check Pods Manifest.lock */,
 				71360A2B25CBD2F100E8E668 /* Sources */,
 				71360A2C25CBD2F100E8E668 /* Frameworks */,
 				71360A2D25CBD2F100E8E668 /* Resources */,
+				FD425E40A88A5601D522B52D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,11 +183,55 @@
 				719349ED25CBD31F00747459 /* PopViewController.xib in Resources */,
 				71360A3725CBD2F400E8E668 /* Assets.xcassets in Resources */,
 				719349F425CBD36300747459 /* Schedule.json in Resources */,
+				713148D62684B54200F303E6 /* AddScheduleViewController.xib in Resources */,
 				71360A3A25CBD2F400E8E668 /* Main.storyboard in Resources */,
+				713148D22684B53500F303E6 /* ScheduleListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EDFDA82324BE130D22BB363E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bark-Mac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD425E40A88A5601D522B52D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bark-Mac/Pods-Bark-Mac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bark-Mac/Pods-Bark-Mac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bark-Mac/Pods-Bark-Mac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		71360A2B25CBD2F100E8E668 /* Sources */ = {
@@ -161,6 +244,8 @@
 				71360A3325CBD2F100E8E668 /* AppDelegate.swift in Sources */,
 				719349EF25CBD31F00747459 /* ScheduleService.swift in Sources */,
 				719349EC25CBD31F00747459 /* RequestService.swift in Sources */,
+				713148D12684B53500F303E6 /* ScheduleListViewController.swift in Sources */,
+				713148D52684B54200F303E6 /* AddScheduleViewController.swift in Sources */,
 				719349EA25CBD31F00747459 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +381,7 @@
 		};
 		71360A4025CBD2F400E8E668 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E6ED096FCAD3F0D14029854 /* Pods-Bark-Mac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -317,6 +403,7 @@
 		};
 		71360A4125CBD2F400E8E668 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9F6D09BBC7C4BB70ACB8B25 /* Pods-Bark-Mac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

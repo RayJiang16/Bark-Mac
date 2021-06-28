@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -35,21 +35,21 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gPV-1l-tA7">
-                    <rect key="frame" x="8" y="68" width="52" height="18"/>
+                    <rect key="frame" x="8" y="67" width="56" height="18"/>
                     <buttonCell key="cell" type="check" title="Save" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="BFe-gK-VxS">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B8S-35-7Xe">
-                    <rect key="frame" x="76" y="68" width="54" height="18"/>
+                    <rect key="frame" x="82" y="67" width="58" height="18"/>
                     <buttonCell key="cell" type="check" title="Copy" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="XM1-zt-Km9">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bXJ-bP-Svj">
-                    <rect key="frame" x="10" y="20" width="170" height="25"/>
+                    <rect key="frame" x="10" y="23" width="170" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="APv-a4-haG"/>
                     </constraints>
@@ -60,7 +60,7 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="asS-HI-VlJ">
-                    <rect key="frame" x="194" y="15" width="71" height="32"/>
+                    <rect key="frame" x="193" y="19" width="73" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="59" id="2t6-7i-X6b"/>
                     </constraints>
@@ -72,13 +72,29 @@
                         <action selector="sendButtonTapped:" target="-2" id="T2H-lT-K1f"/>
                     </connections>
                 </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="0x4-hn-XTT">
+                    <rect key="frame" x="184" y="59" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Bs8-5Y-QS7"/>
+                        <constraint firstAttribute="width" constant="35" id="NWR-UU-22y"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Settings" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="nJA-kD-TLS">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="settingsButtonTapped:" target="-2" id="8Lq-SH-vUc"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="bXJ-bP-Svj" firstAttribute="top" secondItem="gPV-1l-tA7" secondAttribute="bottom" constant="25" id="8st-Wb-EpJ"/>
+                <constraint firstItem="bXJ-bP-Svj" firstAttribute="top" secondItem="gPV-1l-tA7" secondAttribute="bottom" constant="20" id="8st-Wb-EpJ"/>
                 <constraint firstAttribute="trailing" secondItem="iNi-Ft-o0K" secondAttribute="trailing" constant="10" id="FNi-lz-N73"/>
                 <constraint firstItem="asS-HI-VlJ" firstAttribute="centerY" secondItem="bXJ-bP-Svj" secondAttribute="centerY" id="LPy-1O-vSm"/>
+                <constraint firstItem="iNi-Ft-o0K" firstAttribute="leading" secondItem="0x4-hn-XTT" secondAttribute="trailing" constant="5" id="LnB-yL-Thx"/>
                 <constraint firstItem="B8S-35-7Xe" firstAttribute="leading" secondItem="gPV-1l-tA7" secondAttribute="trailing" constant="20" id="M4s-Bt-fIo"/>
                 <constraint firstItem="iNi-Ft-o0K" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="Mrx-qa-smt"/>
+                <constraint firstItem="iNi-Ft-o0K" firstAttribute="top" secondItem="0x4-hn-XTT" secondAttribute="top" id="NZP-XL-olF"/>
                 <constraint firstItem="gPV-1l-tA7" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" symbolic="YES" id="OWY-E6-GhF"/>
                 <constraint firstItem="bXJ-bP-Svj" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="X7f-vg-bce"/>
                 <constraint firstItem="asS-HI-VlJ" firstAttribute="leading" secondItem="bXJ-bP-Svj" secondAttribute="trailing" constant="20" id="Zdo-1n-Tpm"/>
@@ -90,6 +106,7 @@
         </customView>
     </objects>
     <resources>
-        <image name="Exit" width="25" height="25"/>
+        <image name="Exit" width="50" height="50"/>
+        <image name="Settings" width="50" height="50"/>
     </resources>
 </document>
