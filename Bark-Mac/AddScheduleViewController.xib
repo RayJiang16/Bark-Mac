@@ -128,7 +128,7 @@
                 <stackView hidden="YES" distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZD-8v-EpV">
                     <rect key="frame" x="20" y="80" width="228" height="16"/>
                     <subviews>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2gR-qr-ey6">
+                        <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="2gR-qr-ey6">
                             <rect key="frame" x="-2" y="-1" width="53" height="18"/>
                             <buttonCell key="cell" type="check" title="周一" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Pan-tU-J0p">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -138,7 +138,7 @@
                                 <action selector="repeatButtonTapped:" target="-2" id="p5w-SM-UDh"/>
                             </connections>
                         </button>
-                        <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-V7-zVC">
+                        <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-V7-zVC">
                             <rect key="frame" x="57" y="-1" width="53" height="18"/>
                             <buttonCell key="cell" type="check" title="周二" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Iaq-Oh-3NY">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -148,7 +148,7 @@
                                 <action selector="repeatButtonTapped:" target="-2" id="NEN-BN-SQv"/>
                             </connections>
                         </button>
-                        <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="x4m-w1-9Ms">
+                        <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="x4m-w1-9Ms">
                             <rect key="frame" x="116" y="-1" width="53" height="18"/>
                             <buttonCell key="cell" type="check" title="周三" bezelStyle="regularSquare" imagePosition="left" inset="2" id="T60-ME-707">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -158,7 +158,7 @@
                                 <action selector="repeatButtonTapped:" target="-2" id="S3D-rM-kEV"/>
                             </connections>
                         </button>
-                        <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="bv6-Oo-xze">
+                        <button verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="bv6-Oo-xze">
                             <rect key="frame" x="175" y="-1" width="53" height="18"/>
                             <buttonCell key="cell" type="check" title="周四" bezelStyle="regularSquare" imagePosition="left" inset="2" id="PEK-BE-9GZ">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -185,7 +185,7 @@
                 <stackView hidden="YES" distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgQ-dx-bq3">
                     <rect key="frame" x="20" y="44" width="169" height="16"/>
                     <subviews>
-                        <button verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="jLW-uh-SFI">
+                        <button verticalHuggingPriority="750" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="jLW-uh-SFI">
                             <rect key="frame" x="-2" y="-1" width="53" height="18"/>
                             <buttonCell key="cell" type="check" title="周五" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1CA-8c-wCL">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -195,7 +195,7 @@
                                 <action selector="repeatButtonTapped:" target="-2" id="WZc-mM-JOJ"/>
                             </connections>
                         </button>
-                        <button verticalHuggingPriority="750" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="sCN-bK-iBX">
+                        <button verticalHuggingPriority="750" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="sCN-bK-iBX">
                             <rect key="frame" x="57" y="-1" width="53" height="18"/>
                             <buttonCell key="cell" type="check" title="周六" bezelStyle="regularSquare" imagePosition="left" inset="2" id="B7K-wy-6fA">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -205,7 +205,7 @@
                                 <action selector="repeatButtonTapped:" target="-2" id="prB-pw-58e"/>
                             </connections>
                         </button>
-                        <button verticalHuggingPriority="750" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="CQH-ZR-5Pf">
+                        <button verticalHuggingPriority="750" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="CQH-ZR-5Pf">
                             <rect key="frame" x="116" y="-1" width="53" height="18"/>
                             <buttonCell key="cell" type="check" title="周日" bezelStyle="regularSquare" imagePosition="left" inset="2" id="39g-eI-c6T">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>

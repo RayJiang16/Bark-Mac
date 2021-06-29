@@ -14,19 +14,22 @@ enum ScheduleRepeatType: Int, Codable {
 }
 
 enum ScheduleRepeat: Int, Codable {
-    case Monday = 1
-    case Tuesday
-    case Wednesday
-    case Thursday
-    case Friday
-    case Saturday
-    case Sunday
+    case unknown = 0
+    case monday = 1
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
+    case sunday
 }
 
 struct ScheduleModel: Codable, Equatable {
+    let id: String
     let name: String
     let time: String
     let scheme: String
     let repeatType: ScheduleRepeatType
-    let `repeat`: ScheduleRepeat?
+    let `repeat`: [ScheduleRepeat]
+    let user: [User]
 }

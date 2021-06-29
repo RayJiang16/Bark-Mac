@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -67,7 +67,6 @@
 				5E6ED096FCAD3F0D14029854 /* Pods-Bark-Mac.debug.xcconfig */,
 				F9F6D09BBC7C4BB70ACB8B25 /* Pods-Bark-Mac.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,10 +106,10 @@
 				713148D02684B53500F303E6 /* ScheduleListViewController.xib */,
 				713148D32684B54200F303E6 /* AddScheduleViewController.swift */,
 				713148D42684B54200F303E6 /* AddScheduleViewController.xib */,
+				719349E325CBD31F00747459 /* User.swift */,
 				719349E225CBD31F00747459 /* ScheduleModel.swift */,
 				719349E825CBD31F00747459 /* ScheduleService.swift */,
 				719349E525CBD31F00747459 /* RequestService.swift */,
-				719349E325CBD31F00747459 /* User.swift */,
 				719349E425CBD31F00747459 /* Ex+String.swift */,
 				719349F325CBD36300747459 /* Schedule.json */,
 				71360A3625CBD2F400E8E668 /* Assets.xcassets */,

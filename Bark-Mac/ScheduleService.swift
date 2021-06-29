@@ -9,26 +9,20 @@ import Foundation
 
 final class ScheduleService {
     
+    static let shared = ScheduleService()
+    
+    private let fileUrl: URL
     private var list: [ScheduleModel] = []
     private var day: String = ""
     
-    init() {
+    private init() {
+        let lib = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first!
+        fileUrl = URL(fileURLWithPath: "\(lib)/Schedule.json")
         loadSchedule()
     }
     
     func start() {
         Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(run(_:)), userInfo: nil, repeats: true)
-    }
-    
-    func loadSchedule() {
-        guard let url = Bundle.main.url(forResource: "Schedule", withExtension: "json") else { return }
-        do {
-            let data = try Data(contentsOf: url)
-            let list = try JSONDecoder().decode([ScheduleModel].self, from: data)
-            self.list = filterTodayTask(list)
-        } catch {
-            print(error)
-        }
     }
     
     @objc func run(_ timer: Timer) {
@@ -62,21 +56,66 @@ final class ScheduleService {
         }
     }
     
-    // MARK: - Helper function
+}
+
+// MARK: - Save & Load
+extension ScheduleService {
+    
+    func loadSchedule() {
+        do {
+            let data = try Data(contentsOf: fileUrl)
+            let list = try JSONDecoder().decode([ScheduleModel].self, from: data)
+            self.list = sortTask(filterTodayTask(list))
+        } catch {
+            print("loadSchedule failed: \(error)")
+        }
+    }
+    
+    func saveSchedule() {
+        do {
+            let data = try JSONEncoder().encode(list)
+            try data.write(to: fileUrl)
+        } catch {
+            print("saveSchedule failed: \(error)")
+        }
+    }
+    
+    func addSchedule(_ schedule: ScheduleModel, update: Bool = false) {
+        if update {
+            if let idx = list.firstIndex(where: { $0.id == schedule.id }) {
+                list.remove(at: idx)
+            }
+        }
+        list.append(schedule)
+        list = sortTask(list)
+        saveSchedule()
+    }
+    
+    func removeSchedule(_ id: String) {
+        if let idx = list.firstIndex(where: { $0.id == id }) {
+            list.remove(at: idx)
+            saveSchedule()
+        }
+    }
+}
+
+// MARK: - Helper function
+extension ScheduleService {
     
     private func filterTodayTask(_ list: [ScheduleModel]) -> [ScheduleModel] {
-        let today = getWeekday()
         return list.filter {
             switch $0.repeatType {
             case .never, .everyday:
                 return true
             case .custom:
-                if let repeatDay = $0.repeat?.rawValue {
-                    return today == repeatDay
-                }
-                return false
+                let type = ScheduleRepeat(rawValue: getWeekday()) ?? .unknown
+                return $0.repeat.contains(type)
             }
         }
+    }
+    
+    private func sortTask(_ list: [ScheduleModel]) -> [ScheduleModel] {
+        return list.sorted { $0.time < $1.time }
     }
     
     private func getDate(with format: String) -> String {

@@ -7,9 +7,12 @@
 
 import Foundation
 
-struct User {
+struct User: Codable, Equatable {
     
     static let scheduleList: [String] = [""]
-    
     static let sendList: [String] = [""]
+    
+    let id: String
+    let name: String
+    let token: String
 }

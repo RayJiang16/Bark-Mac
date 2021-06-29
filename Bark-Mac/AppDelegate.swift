@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         
-        ScheduleService().start()
+        ScheduleService.shared.start()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
