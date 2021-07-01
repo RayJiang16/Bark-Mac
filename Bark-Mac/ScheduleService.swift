@@ -12,7 +12,7 @@ final class ScheduleService {
     static let shared = ScheduleService()
     
     private let fileUrl: URL
-    private var list: [ScheduleModel] = []
+    private(set) var list: [ScheduleModel] = []
     private var day: String = ""
     
     private init() {
@@ -53,6 +53,9 @@ final class ScheduleService {
     func removeTask(schedule: ScheduleModel) {
         if let idx = (list.firstIndex { $0 == schedule }) {
             list.remove(at: idx)
+            if schedule.repeatType == .never {
+                removeSchedule(schedule.id)
+            }
         }
     }
     
@@ -80,14 +83,12 @@ extension ScheduleService {
         }
     }
     
-    func addSchedule(_ schedule: ScheduleModel, update: Bool = false) {
-        if update {
-            if let idx = list.firstIndex(where: { $0.id == schedule.id }) {
-                list.remove(at: idx)
-            }
+    func addSchedule(_ schedule: ScheduleModel) {
+        if let idx = list.firstIndex(where: { $0.id == schedule.id }) {
+            list.remove(at: idx)
         }
         list.append(schedule)
-        list = sortTask(list)
+        list = sortTask(filterTodayTask(list))
         saveSchedule()
     }
     
@@ -109,7 +110,7 @@ extension ScheduleService {
                 return true
             case .custom:
                 let type = ScheduleRepeat(rawValue: getWeekday()) ?? .unknown
-                return $0.repeat.contains(type)
+                return $0.repeatDay.contains(type)
             }
         }
     }

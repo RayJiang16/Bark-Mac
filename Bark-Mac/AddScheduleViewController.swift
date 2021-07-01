@@ -19,26 +19,63 @@ class AddScheduleViewController: NSViewController {
     @IBOutlet weak var repeatButtonList1: NSStackView!
     @IBOutlet weak var repeatButtonList2: NSStackView!
     
+    private var repeatButtons: [NSButton] = []
     private var repeatList: [ScheduleRepeat] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add Schedule"
+        setupView()
     }
     
-    private func add() {
+    private func getButtons() {
+        repeatButtonList1.subviews.forEach {
+            if let btn = ($0 as? NSButton) {
+                repeatButtons.append(btn)
+            }
+        }
+        repeatButtonList2.subviews.forEach {
+            if let btn = ($0 as? NSButton) {
+                repeatButtons.append(btn)
+            }
+        }
+    }
+    
+    private func setupView() {
+        getButtons()
+        guard let schedule = schedule else { return }
+        nameField.stringValue = schedule.name
+        dateField.stringValue = schedule.time
+        schemeField.stringValue = schedule.scheme
+        repeatButton.selectItem(at: schedule.repeatType.rawValue)
+        schedule.repeatDay.forEach { obj in
+            if let idx = repeatButtons.firstIndex(where: { $0.tag == obj.rawValue }) {
+                repeatButtons[idx].isHighlighted = true
+            }
+        }
+    }
+    
+    private func addSchedule() {
         let id: String
         if let schedule = schedule {
             id = schedule.id
         } else {
             id = UUID().uuidString
         }
-        let obj = ScheduleModel(id: id, name: nameField.stringValue, time: dateField.stringValue, scheme: schemeField.stringValue, repeatType: .never, repeat: [], user: [])
+        let repeatType = ScheduleRepeatType(rawValue: repeatButton.indexOfSelectedItem) ?? .never
+        let schedule = ScheduleModel(id: id, name: nameField.stringValue, time: dateField.stringValue, scheme: schemeField.stringValue, repeatType: repeatType, repeatDay: repeatList, user: [])
+        ScheduleService.shared.addSchedule(schedule)
+        dismiss(self)
     }
+    
 }
 
 // MARK: - Actions
 extension AddScheduleViewController {
+    
+    @IBAction func addButtonTapped(_ sender: NSButton) {
+        addSchedule()
+    }
     
     @IBAction func repeatTypeButtonTapped(_ sender: NSPopUpButton) {
         let hiddenRepeatButtons = sender.indexOfSelectedItem != 2

@@ -26,7 +26,7 @@ class ScheduleListViewController: NSViewController {
 extension ScheduleListViewController: NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return 10
+        return ScheduleService.shared.list.count
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -34,12 +34,19 @@ extension ScheduleListViewController: NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        var rowStr = ""
-        if tableColumn?.title == "标题" {
-            rowStr += "第1列,"
+        let schedule = ScheduleService.shared.list[row]
+        switch tableColumn?.title {
+        case "标题":
+            return schedule.name
+        case "时间":
+            return schedule.time
+        case "Scheme":
+            return schedule.scheme
+        case "重复":
+            return schedule.repeatStr
+        default:
+            return nil
         }
-        rowStr += ("aaa")
-        return rowStr
     }
     
     func tableView(_ tableView: NSTableView, willDisplayCell cell: Any, for tableColumn: NSTableColumn?, row: Int) {

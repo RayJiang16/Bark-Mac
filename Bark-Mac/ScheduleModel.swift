@@ -22,6 +22,27 @@ enum ScheduleRepeat: Int, Codable {
     case friday
     case saturday
     case sunday
+    
+    var title: String {
+        switch self {
+        case .unknown:
+            return ""
+        case .monday:
+            return "周一"
+        case .tuesday:
+            return "周二"
+        case .wednesday:
+            return "周三"
+        case .thursday:
+            return "周四"
+        case .friday:
+            return "周五"
+        case .saturday:
+            return "周六"
+        case .sunday:
+            return "周日"
+        }
+    }
 }
 
 struct ScheduleModel: Codable, Equatable {
@@ -30,6 +51,23 @@ struct ScheduleModel: Codable, Equatable {
     let time: String
     let scheme: String
     let repeatType: ScheduleRepeatType
-    let `repeat`: [ScheduleRepeat]
+    let repeatDay: [ScheduleRepeat]
     let user: [User]
+    
+    var repeatStr: String {
+        switch repeatType {
+        case .never:
+            return "从不"
+        case .everyday:
+            return "每天"
+        case .custom:
+            if repeatDay.contains(.saturday) && repeatDay.contains(.sunday) && repeatDay.count == 2 {
+                return "周末"
+            } else if !repeatDay.contains(.saturday) && !repeatDay.contains(.sunday) && repeatDay.count == 5 {
+                return "工作日"
+            } else {
+                return repeatDay.map{ $0.title }.joined(separator: ", ")
+            }
+        }
+    }
 }
