@@ -279,12 +279,23 @@
                         <action selector="addButtonTapped:" target="-2" id="79h-nQ-cK2"/>
                     </connections>
                 </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RNB-m9-Y9X">
+                    <rect key="frame" x="279" y="258" width="83" height="32"/>
+                    <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ioM-z7-7hy">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="removeButtonTapped:" target="-2" id="pUq-YW-w4h"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="hgn-uw-3TN" firstAttribute="leading" secondItem="STW-cc-YDG" secondAttribute="leading" id="1GQ-Pz-H3g"/>
                 <constraint firstItem="hgQ-dx-bq3" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="3e4-Ad-xO9"/>
                 <constraint firstItem="hgn-uw-3TN" firstAttribute="height" secondItem="STW-cc-YDG" secondAttribute="height" id="6BX-gt-KPx"/>
                 <constraint firstItem="NZD-8v-EpV" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="6qK-cD-uFj"/>
+                <constraint firstItem="x64-aq-Pp7" firstAttribute="leading" secondItem="RNB-m9-Y9X" secondAttribute="trailing" constant="20" id="Bqf-dx-ABq"/>
                 <constraint firstItem="hgQ-dx-bq3" firstAttribute="top" secondItem="NZD-8v-EpV" secondAttribute="bottom" constant="20" id="GPM-RL-XQI"/>
                 <constraint firstItem="TVN-fU-EK8" firstAttribute="leading" secondItem="STW-cc-YDG" secondAttribute="leading" id="GXp-Ll-Njk"/>
                 <constraint firstAttribute="bottom" secondItem="6Lp-Di-4tG" secondAttribute="bottom" id="H4w-Lt-GE5"/>
@@ -293,6 +304,7 @@
                 <constraint firstItem="6Lp-Di-4tG" firstAttribute="leading" secondItem="x64-aq-Pp7" secondAttribute="trailing" constant="20" id="MfO-nr-q7Z"/>
                 <constraint firstItem="STW-cc-YDG" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="NbB-o8-fSx"/>
                 <constraint firstItem="x64-aq-Pp7" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="15" id="PO9-Wj-wyI"/>
+                <constraint firstItem="x64-aq-Pp7" firstAttribute="centerY" secondItem="RNB-m9-Y9X" secondAttribute="centerY" id="RAJ-PU-1TN"/>
                 <constraint firstItem="TVN-fU-EK8" firstAttribute="top" secondItem="STW-cc-YDG" secondAttribute="bottom" constant="20" id="Ual-zI-LB7"/>
                 <constraint firstAttribute="trailing" secondItem="6Lp-Di-4tG" secondAttribute="trailing" id="UcR-Vl-Bt3"/>
                 <constraint firstItem="STW-cc-YDG" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="45" id="VYk-CH-4hb"/>

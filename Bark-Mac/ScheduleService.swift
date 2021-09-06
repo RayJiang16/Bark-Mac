@@ -13,6 +13,7 @@ final class ScheduleService {
     
     private let fileUrl: URL
     private(set) var list: [ScheduleModel] = []
+    private(set) var taskList: [ScheduleModel] = []
     private var day: String = ""
     
     private init() {
@@ -40,19 +41,19 @@ final class ScheduleService {
     
     func getTask() -> [ScheduleModel] {
         let now = getDate(with: "HH:mm")
-        return list.filter { $0.time == now }
+        return taskList.filter { $0.time == now }
     }
     
     func doTask(schedule: ScheduleModel) {
         User.scheduleList.forEach {
-            let url = RequestService.makeUrl(token: $0, title: schedule.name, save: false, copy: false, url: schedule.scheme)
+            let url = RequestService.makeUrl(token: $0.token, title: schedule.name, save: false, copy: false, url: schedule.scheme)
             RequestService.sendRequest(urlStr: url)
         }
     }
     
     func removeTask(schedule: ScheduleModel) {
-        if let idx = (list.firstIndex { $0 == schedule }) {
-            list.remove(at: idx)
+        if let idx = (taskList.firstIndex { $0 == schedule }) {
+            taskList.remove(at: idx)
             if schedule.repeatType == .never {
                 removeSchedule(schedule.id)
             }
@@ -68,7 +69,8 @@ extension ScheduleService {
         do {
             let data = try Data(contentsOf: fileUrl)
             let list = try JSONDecoder().decode([ScheduleModel].self, from: data)
-            self.list = sortTask(filterTodayTask(list))
+            self.list = sortList(list)
+            self.taskList = sortList(filterTodayTask(list))
         } catch {
             print("loadSchedule failed: \(error)")
         }
@@ -88,7 +90,8 @@ extension ScheduleService {
             list.remove(at: idx)
         }
         list.append(schedule)
-        list = sortTask(filterTodayTask(list))
+        list = sortList(list)
+        taskList = sortList(filterTodayTask(list))
         saveSchedule()
     }
     
@@ -115,7 +118,7 @@ extension ScheduleService {
         }
     }
     
-    private func sortTask(_ list: [ScheduleModel]) -> [ScheduleModel] {
+    private func sortList(_ list: [ScheduleModel]) -> [ScheduleModel] {
         return list.sorted { $0.time < $1.time }
     }
     

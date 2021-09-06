@@ -41,7 +41,7 @@ class PopViewController: NSViewController {
     func send(text: String) {
         if text.isEmpty { return }
         User.sendList.forEach {
-            let url = RequestService.makeUrl(token: $0,
+            let url = RequestService.makeUrl(token: $0.token,
                                              title: text,
                                              save: saveButton.state == .on,
                                              copy: copyButton.state == .on)

@@ -14,10 +14,30 @@ class ScheduleListViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Schedule List"
+        tableView.target = self
+        tableView.doubleAction = #selector(tableViewDoubleClick(_:))
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        tableView.reloadData()
+    }
+}
+
+// MARK: - Actions
+extension ScheduleListViewController {
     
     @IBAction func addButtonTapped(_ sender: NSButton) {
         let controller = AddScheduleViewController(nibName: "AddScheduleViewController", bundle: nil)
+        presentAsModalWindow(controller)
+    }
+    
+    @objc func tableViewDoubleClick(_ sender: AnyObject) {
+        guard tableView.selectedRow < ScheduleService.shared.list.count else {
+            return
+        }
+        let controller = AddScheduleViewController(nibName: "AddScheduleViewController", bundle: nil)
+        controller.schedule = ScheduleService.shared.list[tableView.selectedRow]
         presentAsModalWindow(controller)
     }
 }
@@ -57,6 +77,5 @@ extension ScheduleListViewController: NSTableViewDataSource {
 
 // MARK: - NSTableViewDelegate
 extension ScheduleListViewController: NSTableViewDelegate {
-    
     
 }

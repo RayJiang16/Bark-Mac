@@ -77,6 +77,12 @@ extension AddScheduleViewController {
         addSchedule()
     }
     
+    @IBAction func removeButtonTapped(_ sender: NSButton) {
+        guard let id = schedule?.id else { return }
+        ScheduleService.shared.removeSchedule(id)
+        dismiss(self)
+    }
+    
     @IBAction func repeatTypeButtonTapped(_ sender: NSPopUpButton) {
         let hiddenRepeatButtons = sender.indexOfSelectedItem != 2
         repeatButtonList1.isHidden = hiddenRepeatButtons
